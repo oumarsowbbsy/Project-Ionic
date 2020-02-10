@@ -1,0 +1,13 @@
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+    <ion-title color="light">
+      Sponsors
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let Sponsor of sponsor">
+    <img src={{this.link_spon}}{{Sponsor.Logo}} alt="{{Sponsor.Sponsor}}" srcset={{this.link_spon}}{{Sponsor.Logo}}>
+  </ion-card>
+</ion-content>

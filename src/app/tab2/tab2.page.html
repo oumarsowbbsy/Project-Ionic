@@ -1,0 +1,25 @@
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+    <ion-title color="light">
+      Intervenants
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let Intervenant of intervenant">
+  
+    <ion-item>
+      <ion-avatar item-start>
+        <img src={{this.link_int}}{{Intervenant.Avatar}}>
+      </ion-avatar> &nbsp;&nbsp;&nbsp;
+      <ion-card-subtitle>{{Intervenant.NomComplet}}</ion-card-subtitle>
+    </ion-item>
+    <ion-card-content>
+      {{Intervenant.Poste}} <strong>{{ Intervenant.Entreprise }}</strong>
+    </ion-card-content>
+    <ion-button color="success">Consulter Programme</ion-button>
+  </ion-card>
+
+</ion-content>

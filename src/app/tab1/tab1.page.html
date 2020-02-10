@@ -1,0 +1,34 @@
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+    <ion-title color="light">
+      Le programme
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-card *ngFor="let Programme of program" (click)="onSelect(Programme)">
+     <ion-card-header>
+        <ion-card-subtitle class="ion-text-uppercase"><strong> {{Programme.Titre}}</strong> </ion-card-subtitle>
+        <hr>
+       <ion-row>
+         <ion-col class="ion-text-left">
+            <button>
+                    {{ Programme.HeureDemarrage | date: 'HH:mm' }} / {{ Programme.HeureFin | date: 'HH:mm' }} <span class="badge badge-primary"></span>
+            </button>
+         </ion-col>
+         <!-- <ion-col class="ion-text-center">
+              <button > 
+               {{ Programme.HeureFin | date: 'HH:mm' }}
+              </button>
+         </ion-col> -->
+          <ion-col class="ion-text-right">
+              <ion-button color="success">
+               {{ Programme.Salle }}
+              </ion-button>
+         </ion-col>
+       </ion-row>
+     </ion-card-header>
+       <div class="ion-align-items-center"><ion-button [routerLink]="['/detail1/', Programme.id]"> consulter programme</ion-button></div>
+   </ion-card>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header translucent>
+  <ion-toolbar color="tertiary">
+    <ion-title color="light">
+      A Propos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngFor="let Propos of propos">
+    <img src="{{this.link_props}}{{Propos.Postere}}" alt="">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-icon name="calendar" slot="start"></ion-icon>
+          <ion-label position="stacked"> Date de début </ion-label>
+          <p> {{ Propos.Ouverture | date: 'dd MMM yyyy' }} </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="calendar" slot="start"></ion-icon>
+        <ion-label position="stacked"> Date de fin </ion-label>
+        <p> {{ Propos.Fermeture | date: 'dd MMM yyyy' }} </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label position="stacked"> Adresse </ion-label>
+        <p> {{ Propos.Adresse }} </p>
+      </ion-item>
+      
+    </ion-list>
+
+      <ion-text>
+      {{ Propos.APropos }}
+      </ion-text>
+
+</ion-content>
