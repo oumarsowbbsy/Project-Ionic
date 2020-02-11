@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiConnectService } from '../api-connect.service';
+import {NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -9,7 +10,7 @@ import { ApiConnectService } from '../api-connect.service';
 export class Tab2Page {
   intervenant: any;
   link_int= 'http://localhost:8000/uploads/images/intervenant/';
-  constructor(public apiConnectService: ApiConnectService) {
+  constructor(public apiConnectService: ApiConnectService, public router: Router) {
     this.getIntervenant();
     }
 
@@ -19,5 +20,4 @@ export class Tab2Page {
       console.log(this.intervenant);
     });
   }
-
 }
